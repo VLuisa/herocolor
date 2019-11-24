@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.ImageCard {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 200px;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.ImageCard h1 {
+  color: gray;
+  font-size: 1em;
+}
+.ImageCard img {
+  width: 100px;
+}
+
+.BottomBar {
+  font-weight: bold;
+}
