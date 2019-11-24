@@ -9,12 +9,6 @@ class Home extends React.Component {
             tempImageURL: '',
             tempAccentColor: '',
             cardList: [
-                {
-                    'title': 'Sample Card',
-                    'img_url': '/painting.png',
-                    'accentColor': '#000000',
-                    'id': '1'
-                }
             ]
         };
         this.handleClick = this.handleClick.bind(this);
@@ -26,15 +20,9 @@ class Home extends React.Component {
     addCardToList(title, img_url, accentColor) {
         console.log(this.state.cardList);
         console.log("calling me");
-        let newCardObj = {'title': title, 'img_url': img_url, 'accentColor': this.state.tempAccentColor};
+        let newCardObj = { 'title': title, 'img_url': img_url, 'accentColor': this.state.tempAccentColor };
         console.log(newCardObj);
         this.setState({ cardList: [...this.state.cardList, newCardObj] });
-        /* 
-        // this.setState(state => {
-        //     const cardList = [...state.cardList, newCardObj];
-            
-        //     return cardList;
-        // }); */
     }
 
     setAccentColor(palette, title, img_url) {
@@ -57,18 +45,26 @@ class Home extends React.Component {
 
     render() {
         const listItems = this.state.cardList.map((obj) =>
-            <ImageCard title={obj.title} img_url={obj.img_url} accentColor={obj.accentColor} id={obj.id}/>
+            <ImageCard title={obj.title} img_url={obj.img_url} accentColor={obj.accentColor} id={obj.id} />
         );
         const tempImage = <img id="temp-img" width="100px" src={this.state.tempImageURL}></img>;
         return (
-            <div>
-                <h1>Create a new note!</h1>
-                {listItems}
-                Card Title: <input name='cTitle' id='cTitle'></input>
-                Image URL: <input name='iURL' id='iURL'></input>
-                {tempImage}
-                <button onClick={this.uploadTempImage}>Upload Image</button>
-                <button onClick={() => this.handleClick(document.getElementById('cTitle').value, document.getElementById('iURL').value)}>Test Button for Creating</button>
+            <div className="HomeContainer">
+                <div className="CreateCard">
+                    <h1>Create a new note!</h1>
+                    Card Title: <input name='cTitle' id='cTitle'></input>
+                    Image URL: <input name='iURL' id='iURL'></input>
+                    {tempImage}
+                    <button onClick={this.uploadTempImage}>Upload Image</button>
+                    <button onClick={() => this.handleClick(document.getElementById('cTitle').value, document.getElementById('iURL').value)}>Test Button for Creating</button>
+                </div>
+                <div className="CardListSection">
+                    <h1>Your note cards</h1>
+                    <div className="CardList">
+                        {listItems}
+                    </div>
+
+                </div>
             </div>
         );
     }
