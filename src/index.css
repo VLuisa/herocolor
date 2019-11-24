@@ -59,7 +59,7 @@ code {
 
 .CardListSection {
   display: flex;
-  flex-flow: column no-wrap;
+  flex-flow: column nowrap;
 }
 .CardListSection h1 {
   text-align: left;
