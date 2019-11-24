@@ -68,7 +68,6 @@ class Home extends React.Component {
                 Image URL: <input name='iURL' id='iURL'></input>
                 {tempImage}
                 <button onClick={this.uploadTempImage}>Upload Image</button>
-                <button onClick={() => this.addCardToList(document.getElementById('cTitle').value, document.getElementById('iURL').value)}>Create Card</button>
                 <button onClick={() => this.handleClick(document.getElementById('cTitle').value, document.getElementById('iURL').value)}>Test Button for Creating</button>
             </div>
         );

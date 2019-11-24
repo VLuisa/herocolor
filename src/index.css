@@ -15,21 +15,29 @@ code {
 .ImageCard {
   display: flex;
   flex-flow: column;
-  align-items: center;
+  /* align-items: center; */
   width: 200px;
-  border: 1px solid black;
-  padding: 20px;
   border-radius: 10px;
+  /* border: 2px solid grey; */
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
 }
 
 .ImageCard h1 {
   color: gray;
   font-size: 1em;
+  text-align: left;
+  padding-left: 5px;
 }
 .ImageCard img {
-  width: 100px;
+  height: 100px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .BottomBar {
   font-weight: bold;
+  width: 100%;
+  z-index: -1;
+  border-radius: 0px 0px 9px 9px;
 }
