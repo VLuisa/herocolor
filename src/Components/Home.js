@@ -6,7 +6,7 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            tempImageURL: '',
+            tempImageURL: '/EmptyImage.png',
             tempAccentColor: '',
             cardList: [
             ]
@@ -26,6 +26,7 @@ class Home extends React.Component {
     }
 
     setAccentColor(palette, title, img_url) {
+        console.log(palette);
         this.setState(state => ({
             tempAccentColor: palette.LightVibrant.hex
         }))
@@ -47,19 +48,20 @@ class Home extends React.Component {
         const listItems = this.state.cardList.map((obj) =>
             <ImageCard title={obj.title} img_url={obj.img_url} accentColor={obj.accentColor} id={obj.id} />
         );
-        const tempImage = <img id="temp-img" width="100px" src={this.state.tempImageURL}></img>;
+        const tempImage = <img id="temp-img" width="400px" src={this.state.tempImageURL}></img>;
         return (
             <div className="HomeContainer">
                 <div className="CreateCard">
-                    <h1>Create a new note!</h1>
-                    Card Title: <input name='cTitle' id='cTitle'></input>
-                    Image URL: <input name='iURL' id='iURL'></input>
+                    <h1>Create Note</h1>
+                    <input name='cTitle' id='cTitle' placeholder="Note title..."></input>
+                    <span id="image-upload"><input name='iURL' id='iURL' placeholder="Link to image..."></input>
+                    <button onClick={this.uploadTempImage} id="photo-button"><img src="/add_photo.png"/></button></span>
+                    
                     {tempImage}
-                    <button onClick={this.uploadTempImage}>Upload Image</button>
-                    <button onClick={() => this.handleClick(document.getElementById('cTitle').value, document.getElementById('iURL').value)}>Test Button for Creating</button>
+                    <button onClick={() => this.handleClick(document.getElementById('cTitle').value, document.getElementById('iURL').value)}>Add Card</button>
                 </div>
                 <div className="CardListSection">
-                    <h1>Your note cards</h1>
+                    <h1>Your Notes</h1>
                     <div className="CardList">
                         {listItems}
                     </div>
