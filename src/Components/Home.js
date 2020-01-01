@@ -55,7 +55,6 @@ class Home extends React.Component {
                     <input name='cTitle' id='cTitle' placeholder="Note title..."></input>
                     <span id="image-upload"><input name='iURL' id='iURL' placeholder="Link to image..."></input>
                     <button onClick={this.uploadTempImage} id="photo-button"><img src="/add_photo.png"/></button></span>
-                    
                     {tempImage}
                     <button onClick={() => this.handleClick(document.getElementById('cTitle').value, document.getElementById('iURL').value)}>Add Card</button>
                 </div>
@@ -64,7 +63,6 @@ class Home extends React.Component {
                     <div className="CardList">
                         {listItems}
                     </div>
-
                 </div>
             </div>
         );
