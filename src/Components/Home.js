@@ -19,7 +19,6 @@ class Home extends React.Component {
 
     addCardToList(title, img_url, accentColor) {
         console.log(this.state.cardList);
-        console.log("calling me");
         let newCardObj = { 'title': title, 'img_url': img_url, 'accentColor': this.state.tempAccentColor };
         console.log(newCardObj);
         this.setState({ cardList: [...this.state.cardList, newCardObj] });
